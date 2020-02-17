@@ -30,13 +30,6 @@ node {
    stage('Maven-Package') {
    sh label: '', script: 'mvn package'
   }
-  
-   stage('Archive-Artifacts') {
-   archiveArtifacts 'target/*.war'
-  }
-     stage('Archive-Artifacts') {
-   archiveArtifacts 'target/*.war'
-  }
   stage('Jfrog Artifacory Upload') {
         def server= Artifactory.server 'Artifactory'
                     def uploadSpec= """{
